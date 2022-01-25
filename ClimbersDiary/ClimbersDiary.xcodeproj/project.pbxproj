@@ -11,6 +11,15 @@
 		5DE42C2C27A0316E005291EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C2B27A0316E005291EF /* ContentView.swift */; };
 		5DE42C2E27A0316F005291EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE42C2D27A0316F005291EF /* Assets.xcassets */; };
 		5DE42C3127A0316F005291EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE42C3027A0316F005291EF /* Preview Assets.xcassets */; };
+		5DE42C3A27A0344C005291EF /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C3927A0344C005291EF /* DataHandler.swift */; };
+		5DE42C3C27A03464005291EF /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C3B27A03464005291EF /* Route.swift */; };
+		5DE42C3E27A0346F005291EF /* RouteProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C3D27A0346F005291EF /* RouteProgress.swift */; };
+		5DE42C4027A03485005291EF /* StartOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C3F27A03485005291EF /* StartOptions.swift */; };
+		5DE42C4227A0352B005291EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C4127A0352B005291EF /* HomeView.swift */; };
+		5DE42C4427A03547005291EF /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C4327A03547005291EF /* FriendsView.swift */; };
+		5DE42C4627A03561005291EF /* CircuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C4527A03561005291EF /* CircuitView.swift */; };
+		5DE42C4827A035CA005291EF /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C4727A035CA005291EF /* RouteView.swift */; };
+		5DE42C4A27A04253005291EF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE42C4927A04253005291EF /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		5DE42C2B27A0316E005291EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5DE42C2D27A0316F005291EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DE42C3027A0316F005291EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5DE42C3927A0344C005291EF /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		5DE42C3B27A03464005291EF /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5DE42C3D27A0346F005291EF /* RouteProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteProgress.swift; sourceTree = "<group>"; };
+		5DE42C3F27A03485005291EF /* StartOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOptions.swift; sourceTree = "<group>"; };
+		5DE42C4127A0352B005291EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5DE42C4327A03547005291EF /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		5DE42C4527A03561005291EF /* CircuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitView.swift; sourceTree = "<group>"; };
+		5DE42C4727A035CA005291EF /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		5DE42C4927A04253005291EF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = "../../../../../OneDrive - Aberystwyth University/data.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +69,11 @@
 		5DE42C2827A0316E005291EF /* ClimbersDiary */ = {
 			isa = PBXGroup;
 			children = (
+				5DE42C3827A0343B005291EF /* Classes */,
+				5DE42C3727A03432005291EF /* Views */,
 				5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */,
 				5DE42C2B27A0316E005291EF /* ContentView.swift */,
+				5DE42C4927A04253005291EF /* data.json */,
 				5DE42C2D27A0316F005291EF /* Assets.xcassets */,
 				5DE42C2F27A0316F005291EF /* Preview Content */,
 			);
@@ -65,6 +86,28 @@
 				5DE42C3027A0316F005291EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DE42C3727A03432005291EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DE42C4127A0352B005291EF /* HomeView.swift */,
+				5DE42C4327A03547005291EF /* FriendsView.swift */,
+				5DE42C4527A03561005291EF /* CircuitView.swift */,
+				5DE42C4727A035CA005291EF /* RouteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5DE42C3827A0343B005291EF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5DE42C3927A0344C005291EF /* DataHandler.swift */,
+				5DE42C3B27A03464005291EF /* Route.swift */,
+				5DE42C3D27A0346F005291EF /* RouteProgress.swift */,
+				5DE42C3F27A03485005291EF /* StartOptions.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DE42C3127A0316F005291EF /* Preview Assets.xcassets in Resources */,
+				5DE42C4A27A04253005291EF /* data.json in Resources */,
 				5DE42C2E27A0316F005291EF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +181,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE42C3E27A0346F005291EF /* RouteProgress.swift in Sources */,
+				5DE42C4227A0352B005291EF /* HomeView.swift in Sources */,
+				5DE42C4427A03547005291EF /* FriendsView.swift in Sources */,
 				5DE42C2C27A0316E005291EF /* ContentView.swift in Sources */,
+				5DE42C3C27A03464005291EF /* Route.swift in Sources */,
+				5DE42C3A27A0344C005291EF /* DataHandler.swift in Sources */,
+				5DE42C4827A035CA005291EF /* RouteView.swift in Sources */,
+				5DE42C4627A03561005291EF /* CircuitView.swift in Sources */,
 				5DE42C2A27A0316E005291EF /* ClimbersDiaryApp.swift in Sources */,
+				5DE42C4027A03485005291EF /* StartOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
