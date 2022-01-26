@@ -17,9 +17,9 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
                 List {
-                    ForEach(routes, id: \.self){ route in
+                    ForEach(foundRoutes, id: \.self){ route in
                         NavigationLink(destination: RouteView(route: route)){
-                            RouteListItem(route: route, progress: 1.0)
+                            RouteListItem(route: route, progress: findProgress(route: route.routeNo))
                         }.listRowBackground(getColor(color: route.colour))
                         
 
@@ -54,10 +54,10 @@ struct HomeView: View {
     }
     
     var foundRoutes: [Route] {
-        if searchTxt.count < 3 {
-            return [Route]()
+        if searchTxt.isEmpty {
+            return routes
         } else {
-            return routes.filter{ $0.grade.contains(searchTxt)}
+            return routes.filter { $0.grade.contains(searchTxt) }
         }
     }
     
