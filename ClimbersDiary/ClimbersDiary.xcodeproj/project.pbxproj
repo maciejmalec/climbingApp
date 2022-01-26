@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4DEFA327A1EBA10047C55D /* RouteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DEFA227A1EBA10047C55D /* RouteListItem.swift */; };
+		5DE00EC227A1E6CE00563F5E /* progresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE00EC127A1E6CE00563F5E /* progresses.json */; };
 		5DE42C2A27A0316E005291EF /* ClimbersDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */; };
 		5DE42C2C27A0316E005291EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C2B27A0316E005291EF /* ContentView.swift */; };
 		5DE42C2E27A0316F005291EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE42C2D27A0316F005291EF /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D4DEFA227A1EBA10047C55D /* RouteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListItem.swift; sourceTree = "<group>"; };
+		5DE00EC127A1E6CE00563F5E /* progresses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = progresses.json; path = "../../../../../OneDrive - Aberystwyth University/progresses.json"; sourceTree = "<group>"; };
 		5DE42C2627A0316E005291EF /* ClimbersDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimbersDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbersDiaryApp.swift; sourceTree = "<group>"; };
 		5DE42C2B27A0316E005291EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */,
 				5DE42C2B27A0316E005291EF /* ContentView.swift */,
 				5DE42C4927A04253005291EF /* data.json */,
+				5DE00EC127A1E6CE00563F5E /* progresses.json */,
 				5DE42C2D27A0316F005291EF /* Assets.xcassets */,
 				5DE42C2F27A0316F005291EF /* Preview Content */,
 			);
@@ -95,6 +100,7 @@
 				5DE42C4327A03547005291EF /* FriendsView.swift */,
 				5DE42C4527A03561005291EF /* CircuitView.swift */,
 				5DE42C4727A035CA005291EF /* RouteView.swift */,
+				5D4DEFA227A1EBA10047C55D /* RouteListItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE00EC227A1E6CE00563F5E /* progresses.json in Resources */,
 				5DE42C3127A0316F005291EF /* Preview Assets.xcassets in Resources */,
 				5DE42C4A27A04253005291EF /* data.json in Resources */,
 				5DE42C2E27A0316F005291EF /* Assets.xcassets in Resources */,
@@ -184,6 +191,7 @@
 				5DE42C3E27A0346F005291EF /* RouteProgress.swift in Sources */,
 				5DE42C4227A0352B005291EF /* HomeView.swift in Sources */,
 				5DE42C4427A03547005291EF /* FriendsView.swift in Sources */,
+				5D4DEFA327A1EBA10047C55D /* RouteListItem.swift in Sources */,
 				5DE42C2C27A0316E005291EF /* ContentView.swift in Sources */,
 				5DE42C3C27A03464005291EF /* Route.swift in Sources */,
 				5DE42C3A27A0344C005291EF /* DataHandler.swift in Sources */,

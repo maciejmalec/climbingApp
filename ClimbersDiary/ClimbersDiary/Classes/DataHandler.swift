@@ -24,6 +24,7 @@ struct DataHandler{
     func parseRoute(data: Data) -> [Route]{
         do{
             let routes = try JSONDecoder().decode([Route].self, from: data)
+            print(routes.count)
             return routes
         } catch{
             print(error)

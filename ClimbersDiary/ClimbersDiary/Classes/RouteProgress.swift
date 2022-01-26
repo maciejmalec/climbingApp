@@ -8,7 +8,7 @@
 import Foundation
 
 struct RouteProgress: Codable, Hashable{
-    var routeNumber: Int
+    var routeNo: Int
     var completionNo: Int
     var notes: String
 }
