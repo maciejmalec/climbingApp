@@ -12,7 +12,20 @@ struct RouteView: View {
     @State var route: Route
     
     var body: some View {
-        Text(route.colour)
+        VStack{
+            Text("Route number: " + String(route.routeNo))
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("Grade: " + route.grade)
+            HStack{
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("+")
+                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("-")
+                }
+            }
+        }
     }
 }
+
 

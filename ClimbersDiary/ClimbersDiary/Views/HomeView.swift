@@ -11,7 +11,9 @@ struct HomeView: View {
     
     private let dh = DataHandler()
     @State private var searchTxt = ""
+    @State private var sortBtnTxt = "Sort by Grade ASC"
     @State private var routes = [Route]()
+    @State private var displayRoutes = [Route]()
     @State private var progresses = [RouteProgress]()
     
     var body: some View {
@@ -20,12 +22,26 @@ struct HomeView: View {
                     ForEach(foundRoutes, id: \.self){ route in
                         NavigationLink(destination: RouteView(route: route)){
                             RouteListItem(route: route, progress: findProgress(route: route.routeNo))
-                        }.listRowBackground(getColor(color: route.colour))
+                        }.padding().listRowBackground(getColor(color: route.colour))
                         
-
                     }
-                }.navigationTitle("Routes")
+                }
+                .navigationTitle("Routes")
                 .searchable(text: $searchTxt)
+                .toolbar {
+                    HStack{
+                        Button(action: {
+                            routes.sort{
+                                $0.routeNo < $1.routeNo
+                            }}) {
+                            Text("Reset")
+                        }
+                        Button(action: sort) {
+                            Text(sortBtnTxt)
+                        }
+                    }
+
+                }
         }.onAppear(perform: loadData)
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -54,7 +70,7 @@ struct HomeView: View {
     }
     
     var foundRoutes: [Route] {
-        if searchTxt.isEmpty {
+        if searchTxt.isEmpty{
             return routes
         } else {
             return routes.filter { $0.grade.contains(searchTxt) }
@@ -68,6 +84,20 @@ struct HomeView: View {
             }
         }
         return 0
+    }
+    
+    func sort(){
+        if(sortBtnTxt == "Sort by Grade ASC"){
+            sortBtnTxt = "Sort by Grade DSC"
+            routes.sort{
+                $0.grade < $1.grade
+            }
+        }else{
+            sortBtnTxt = "Sort by Grade ASC"
+            routes.sort{
+                $0.grade > $1.grade
+            }
+        }
     }
     
     func getColor(color: String) -> Color {
