@@ -31,14 +31,14 @@ struct DataHandler{
         return [Route]()
     }
     
-    func parseRouteProgress(data: Data) -> [RouteProgress]{
-        do{
-            let progresses = try JSONDecoder().decode([RouteProgress].self, from: data)
-            return progresses
-        } catch{
-            print(error)
-        }
-        return [RouteProgress]()
-    }
+//    func parseRouteProgress(data: Data) -> [RouteProgress]{
+//        do{
+//            let progresses = try JSONDecoder().decode([RouteProgress].self, from: data)
+//            return progresses
+//        } catch{
+//            print(error)
+//        }
+//        return [RouteProgress]()
+//    }
     
 }

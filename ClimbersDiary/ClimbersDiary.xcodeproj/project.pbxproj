@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5D4DEFA327A1EBA10047C55D /* RouteListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DEFA227A1EBA10047C55D /* RouteListItem.swift */; };
+		5D4DEFA527A42F510047C55D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D4DEFA427A42F510047C55D /* GoogleService-Info.plist */; };
+		5DB24C9027A431BA0095DCC5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5DB24C8F27A431BA0095DCC5 /* FirebaseFirestore */; };
+		5DB24C9327A434DC0095DCC5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB24C9227A434DC0095DCC5 /* ViewModel.swift */; };
 		5DE00EC227A1E6CE00563F5E /* progresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DE00EC127A1E6CE00563F5E /* progresses.json */; };
 		5DE42C2A27A0316E005291EF /* ClimbersDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */; };
 		5DE42C2C27A0316E005291EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE42C2B27A0316E005291EF /* ContentView.swift */; };
@@ -26,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		5D4DEFA227A1EBA10047C55D /* RouteListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListItem.swift; sourceTree = "<group>"; };
+		5D4DEFA427A42F510047C55D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DB24C9227A434DC0095DCC5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5DE00EC127A1E6CE00563F5E /* progresses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = progresses.json; path = "../../../../../OneDrive - Aberystwyth University/progresses.json"; sourceTree = "<group>"; };
 		5DE42C2627A0316E005291EF /* ClimbersDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimbersDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbersDiaryApp.swift; sourceTree = "<group>"; };
@@ -48,12 +53,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB24C9027A431BA0095DCC5 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DB24C9127A434B90095DCC5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5DB24C9227A434DC0095DCC5 /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5DE42C1D27A0316E005291EF = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +87,7 @@
 		5DE42C2827A0316E005291EF /* ClimbersDiary */ = {
 			isa = PBXGroup;
 			children = (
+				5DB24C9127A434B90095DCC5 /* ViewModels */,
 				5DE42C3827A0343B005291EF /* Classes */,
 				5DE42C3727A03432005291EF /* Views */,
 				5DE42C2927A0316E005291EF /* ClimbersDiaryApp.swift */,
@@ -80,6 +95,7 @@
 				5DE42C4927A04253005291EF /* data.json */,
 				5DE00EC127A1E6CE00563F5E /* progresses.json */,
 				5DE42C2D27A0316F005291EF /* Assets.xcassets */,
+				5D4DEFA427A42F510047C55D /* GoogleService-Info.plist */,
 				5DE42C2F27A0316F005291EF /* Preview Content */,
 			);
 			path = ClimbersDiary;
@@ -132,6 +148,9 @@
 			dependencies = (
 			);
 			name = ClimbersDiary;
+			packageProductDependencies = (
+				5DB24C8F27A431BA0095DCC5 /* FirebaseFirestore */,
+			);
 			productName = ClimbersDiary;
 			productReference = 5DE42C2627A0316E005291EF /* ClimbersDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 5DE42C1D27A0316E005291EF;
+			packageReferences = (
+				5DB24C8E27A431BA0095DCC5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5DE42C2727A0316E005291EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +198,7 @@
 			files = (
 				5DE00EC227A1E6CE00563F5E /* progresses.json in Resources */,
 				5DE42C3127A0316F005291EF /* Preview Assets.xcassets in Resources */,
+				5D4DEFA527A42F510047C55D /* GoogleService-Info.plist in Resources */,
 				5DE42C4A27A04253005291EF /* data.json in Resources */,
 				5DE42C2E27A0316F005291EF /* Assets.xcassets in Resources */,
 			);
@@ -198,6 +221,7 @@
 				5DE42C4827A035CA005291EF /* RouteView.swift in Sources */,
 				5DE42C4627A03561005291EF /* CircuitView.swift in Sources */,
 				5DE42C2A27A0316E005291EF /* ClimbersDiaryApp.swift in Sources */,
+				5DB24C9327A434DC0095DCC5 /* ViewModel.swift in Sources */,
 				5DE42C4027A03485005291EF /* StartOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DB24C8E27A431BA0095DCC5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DB24C8F27A431BA0095DCC5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DB24C8E27A431BA0095DCC5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5DE42C1E27A0316E005291EF /* Project object */;
 }

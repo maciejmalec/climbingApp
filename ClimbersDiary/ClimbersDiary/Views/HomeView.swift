@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct HomeView: View {
     
@@ -14,7 +15,11 @@ struct HomeView: View {
     @State private var sortBtnTxt = "Sort by Grade ASC"
     @State private var routes = [Route]()
     @State private var displayRoutes = [Route]()
-    @State private var progresses = [RouteProgress]()
+    @ObservedObject var model = ViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some View {
         NavigationView{
@@ -47,18 +52,10 @@ struct HomeView: View {
     }
     
     func loadData(){
+        model.getData()
         fetchRoutes()
-        fetchProgresses()
     }
-    
-    func fetchProgresses(){
-        progresses.removeAll()
-        if let data = dh.readLocalFile(name: "progresses") {
-            for progress in dh.parseRouteProgress(data: data){
-                progresses.append(progress)
-            }
-        }
-    }
+
     
     func fetchRoutes() {
         routes.removeAll()
@@ -78,8 +75,8 @@ struct HomeView: View {
     }
     
     func findProgress(route: Int) -> Float {
-        for progress in progresses{
-            if(progress.routeNo == route){
+        for progress in model.list{
+            if(Int(progress.routeNo) == route){
                 return Float(progress.completionNo)
             }
         }
