@@ -12,6 +12,25 @@ class ViewModel: ObservableObject {
     
     @Published var list = [RouteProgress]()
     
+    func addProgress(progress: RouteProgress) {
+        let db = Firestore.firestore()
+
+        db.collection("progresses").addDocument(data: ["routeNo": progress.routeNo, "completionNo": progress.completionNo, "notes": progress.notes]) { error in
+            //check for errors
+            if error == nil{
+
+            }else{
+                self.getData()
+            }
+        }
+    }
+    
+    func udpateProgress(progress: RouteProgress) {
+        let db = Firestore.firestore()
+        
+        db.collection("progresses").document(progress.id).setData(["completionNo": progress.completionNo, "notes": progress.notes], merge: true)
+    }
+    
     func getData() {
         
         //Get a reference to db
@@ -26,7 +45,7 @@ class ViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         
                         for d in snapshot.documents {
-                            let temp = RouteProgress(routeNo: d.documentID,
+                            let temp = RouteProgress(id: d.documentID, routeNo: d["routeNo"] as? Int ?? -1,
                                                      completionNo: d["completionNo"] as? Int ?? 0,
                                                      notes: d["notes"] as? String ?? "")
                             self.list.append(temp)

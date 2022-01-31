@@ -19,14 +19,17 @@ struct HomeView: View {
     
     init() {
         FirebaseApp.configure()
+        model.getData()
     }
     
     var body: some View {
         NavigationView{
                 List {
                     ForEach(foundRoutes, id: \.self){ route in
-                        NavigationLink(destination: RouteView(route: route)){
-                            RouteListItem(route: route, progress: findProgress(route: route.routeNo))
+                        let progress = findProgress(route: route.routeNo)
+                        
+                        NavigationLink(destination: RouteView(route: route, progress: progress)){
+                            RouteListItem(route: route, progress: Float(progress.completionNo))
                         }.padding().listRowBackground(getColor(color: route.colour))
                         
                     }
@@ -52,7 +55,6 @@ struct HomeView: View {
     }
     
     func loadData(){
-        model.getData()
         fetchRoutes()
     }
 
@@ -74,13 +76,13 @@ struct HomeView: View {
         }
     }
     
-    func findProgress(route: Int) -> Float {
+    func findProgress(route: Int) -> RouteProgress {
         for progress in model.list{
             if(Int(progress.routeNo) == route){
-                return Float(progress.completionNo)
+                return progress
             }
         }
-        return 0
+        return RouteProgress(id: "new", routeNo: -1, completionNo: 0, notes: "")
     }
     
     func sort(){

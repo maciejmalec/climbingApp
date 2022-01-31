@@ -8,7 +8,8 @@
 import Foundation
 
 struct RouteProgress{
-    var routeNo: String
+    var id: String
+    var routeNo: Int
     var completionNo: Int
     var notes: String
 }
