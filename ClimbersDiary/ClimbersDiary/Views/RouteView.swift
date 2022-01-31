@@ -11,74 +11,103 @@ struct RouteView: View {
     
     @State var route: Route
     @State var progress: RouteProgress
+    @FocusState private var focus: Bool
     
     var body: some View {
         VStack{
             Text("Route number: " + String(route.routeNo))
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            
             Divider()
-            HStack{
-                VStack{
-                    Text("Grade:")
-                    Text("Panel:")
-                    Text("Start position:")
-                    Text("Colour:")
-                    Text("Setter:")
+            
+            Group{
+                if focus == false {
+                    HStack{
+                        VStack{
+                            Text("Grade:")
+                            Text("Panel:")
+                            Text("Start position:")
+                            Text("Colour:")
+                            Text("Setter:")
+                        }
+                        .padding(.top)
+                        VStack{
+                            Text(route.grade)
+                            Text(String(route.panel))
+                            Text(route.start.description)
+                            Text(route.colour)
+                            Text(route.setter)
+                        }
+                        .padding(.top)
+                    }
+                    VStack{
+                        Text("Notes")
+                            .padding(.top)
+                        Text(route.notes)
+                        
+                    }
+                    Divider()
                 }
-                .padding(.top)
-                VStack{
-                    Text(route.grade)
-                    Text(String(route.panel))
-                    Text(route.start.description)
-                    Text(route.colour)
-                    Text(route.setter)
-                }
-                .padding(.top)
             }
+            
             VStack{
-                Text("Notes")
-                    .padding(.top)
-                Text(route.notes)
-                
+                Group{
+                    if focus == false {
+                        Text("Personal Progress")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        Text("Times completed: " + String(progress.completionNo))
+                            .padding(.vertical)
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                if progress.completionNo > 0 {
+                                    progress.completionNo -= 1
+                                }
+                            }) {
+                                Text("-")
+                                    .frame(width: 50.0, height: 50.0)
+                                    .font(.system(size: 40))
+                            }
+                            Spacer()
+                            Button(action: {
+                                if progress.completionNo < 3 {
+                                    progress.completionNo += 1
+                                }
+                            }) {
+                                Text("+")
+                                    .frame(width: 50.0, height: 50.0)
+                                    .font(.system(size: 40))
+                            }
+                            Spacer()
+                        }
+                    }
+                }
+
+                Group{
+                    Text("Notes")
+                        .padding(.top)
+                    TextEditor(text: $progress.notes)
+                        .colorMultiply(Color(red: 229/255, green: 228/255, blue: 226/255))
+                        .cornerRadius(16)
+                        .focused($focus)
+                        .toolbar {
+                            ToolbarItem(placement: .keyboard) {
+                                Button("Done") {
+                                    focus = false
+                                }
+                            }
+ 
+                        }
+                        .frame(maxHeight: 100, alignment: .leading)
+                }
+                .padding(.horizontal)
             }
+            
             Divider()
-            VStack{
-                Text("Personal Progress")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Times completed: " + String(progress.completionNo))
-                    .padding(.vertical)
-                HStack{
-                    Spacer()
-                    Button(action: {
-                        if progress.completionNo > 0 {
-                            progress.completionNo -= 1
-                        }
-                    }) {
-                        Text("-")
-                            .frame(width: 50.0, height: 50.0)
-                            .font(.system(size: 40))
-                    }
-                    Spacer()
-                    Button(action: {
-                        if progress.completionNo < 3 {
-                            progress.completionNo += 1
-                        }
-                    }) {
-                        Text("+")
-                            .frame(width: 50.0, height: 50.0)
-                            .font(.system(size: 40))
-                    }
-                    Spacer()
-                }
-                Text("Notes")
-                    .padding(.top)
-                TextEditor(text: .constant(progress.notes))
-                    .padding(.horizontal)
-            }
+            
             Button(action: saveProgress) {
                 Text("Save changes")
             }
-            Spacer()
         }
     }
     
